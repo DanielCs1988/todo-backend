@@ -8,7 +8,7 @@ export class Todo {
   @Column()
   public content: string;
 
-  @Column()
+  @Column({ default: false })
   public completed: boolean;
 
   @Column({ length: 27 })

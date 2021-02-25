@@ -13,7 +13,7 @@ export class TodoService {
   ) {}
 
   public async getAll(): Promise<Todo[]> {
-    return this.repository.find();
+    return this.repository.find({ order: { createdAt: 'ASC' } });
   }
 
   public async getOne(id: number): Promise<Todo> {
@@ -21,10 +21,7 @@ export class TodoService {
   }
 
   public async create(todoDto: TodoDto): Promise<Todo> {
-    const entity = this.repository.create({
-      ...todoDto,
-      completed: false,
-    });
+    const entity = this.repository.create(todoDto);
 
     return this.repository.save(entity);
   }

@@ -1,6 +1,6 @@
-import { MinLength } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class TodoDto {
-  @MinLength(3)
+  @IsNotEmpty()
   public readonly content: string;
 }
