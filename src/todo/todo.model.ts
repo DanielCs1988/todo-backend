@@ -3,13 +3,13 @@ import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Todo {
   @PrimaryGeneratedColumn()
-  public readonly id: number;
+  public id: number;
 
   @Column()
-  public readonly content: string;
+  public content: string;
 
   @Column()
-  public readonly completed: boolean;
+  public completed: boolean;
 
   @Column({ length: 27 })
   public createdAt: string;
