@@ -1,7 +1,9 @@
 import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+import { ITodo } from './todo.interface';
+
 @Entity()
-export class Todo {
+export class Todo implements ITodo {
   @PrimaryGeneratedColumn()
   public id: number;
 
